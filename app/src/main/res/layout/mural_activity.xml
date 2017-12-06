@@ -12,7 +12,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resultado: "
+        android:text="Resultado IMC: "
         android:textSize="18sp"
         android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,8 +44,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descrição: "
-        android:textSize="18sp"
+        android:text="Percentual de Gordura: "
+        android:textSize="24sp"
         android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -55,10 +55,10 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <TextView
-        android:id="@+id/tvDescricao"
+        android:id="@+id/tvPercentual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"

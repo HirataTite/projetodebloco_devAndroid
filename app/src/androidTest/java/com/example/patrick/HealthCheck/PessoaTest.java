@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 
 public class PessoaTest extends TestCase{
 
-    public void TestandoCalculoImcParaPessoaComPesoAdequado(){
+    public void testCalculoImcParaPessoaComPesoAdequado(){
         Pessoa p = new Pessoa("Fulano", 30, 1.90, 80);
         boolean resultado = p.calculaImc();
         assertTrue(resultado);
