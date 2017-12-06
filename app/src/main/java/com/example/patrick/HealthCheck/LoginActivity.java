@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity{
     private void validate(String user, String password){
 
         if ((user.equals("alunos.infnet@gmail.com")) && (password.equals("alunosinfnet1234"))){
-            Intent intent = new Intent(LoginActivity.this, ImcActivity.class);
+            Intent intent = new Intent(LoginActivity.this, CalculoActivity.class);
             startActivity(intent);
         } else {
             int count = 5;

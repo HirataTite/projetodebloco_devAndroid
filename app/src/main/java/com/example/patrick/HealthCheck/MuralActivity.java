@@ -13,39 +13,41 @@ import org.w3c.dom.Text;
 public class MuralActivity extends AppCompatActivity {
 
     private TextView tvResultado;
-    private TextView tvDescricao;
+    private TextView tvPercentual;
     private String nome;
-
+    private String percent;
+    private String resultado;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mural_activity);
 
         tvResultado = (TextView) findViewById(R.id.tvResultado);
-        tvDescricao = (TextView) findViewById(R.id.tvDescricao);
+        tvPercentual = (TextView) findViewById(R.id.tvPercentual);
 
-        String resultado = getIntent().getStringExtra("IMC");
-        tvResultado.setText(resultado);
 
         Bundle extra = getIntent().getExtras();
         if (extra != null) {
             nome = getIntent().getStringExtra("NOME");
+            resultado = getIntent().getStringExtra("IMC");
+            percent = getIntent().getStringExtra("PERCENTUAL");
+            tvPercentual.setText("Percentual de Gordura: " + percent+"%");
 
             float imc = Float.parseFloat(resultado);
             if (imc < 17) {
-                tvDescricao.setText(nome + ", está muito abaixo do peso! Que tal comer mais um pouco, heim?");
+                tvResultado.setText(nome + " muito abaixo do peso com IMC: "+resultado);
             } else if (imc >= 17 && imc < 18.49) {
-                tvDescricao.setText(nome + ", está abaixo do peso, ainda pode comer aquele podrão");
+                tvResultado.setText(nome + " abaixo do peso com IMC: "+resultado);
             } else if (imc >= 18.5 && imc < 24.99) {
-                tvDescricao.setText(nome + ", está com peso normal");
+                tvResultado.setText(nome + " peso normal com IMC: "+resultado);
             } else if (imc >= 25 && imc < 29.99) {
-                tvDescricao.setText(nome + ", está acima do Peso! Começar a maneirar heim!");
+                tvResultado.setText(nome + " acima do peso com IMC: "+resultado);
             } else if (imc >= 30 && imc < 34.99) {
-                tvDescricao.setText("Tome cuidado," + nome + ", você está com Obesidade I!");
+                tvResultado.setText(nome + " Obesidade I com IMC: "+resultado);
             } else if (imc > 35 && imc < 39.99) {
-                tvDescricao.setText("Tome cuidado," + nome + ", você está com Obesidade II (severa)!");
+                tvResultado.setText(nome + " Obesidade II(severa) com IMC: "+resultado);
             } else if (imc > 40) {
-                tvDescricao.setText("Tome cuidado," + nome + ", você está com Obesidade III (mórbida)!");
+                tvResultado.setText(nome + " Obesidade III(mórbida) com IMC: "+resultado);
             }
         }
     }
